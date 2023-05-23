@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A616957C2A0929CE001B0396 /* PetWalker Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A616957B2A0929CE001B0396 /* PetWalker Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A61695812A0929CE001B0396 /* PetWalkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61695802A0929CE001B0396 /* PetWalkerApp.swift */; };
+		A61695832A0929CE001B0396 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61695822A0929CE001B0396 /* ContentView.swift */; };
+		A61695852A0929D0001B0396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61695842A0929D0001B0396 /* Assets.xcassets */; };
+		A61695882A0929D0001B0396 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61695872A0929D0001B0396 /* Preview Assets.xcassets */; };
+		A61695932A092C10001B0396 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61695922A092C10001B0396 /* HealthKitManager.swift */; };
+		A61695AF2A0946DC001B0396 /* PetWalkerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A61695AA2A0946DB001B0396 /* PetWalkerWidget.intentdefinition */; };
+		A6403E322A0D1180002570DE /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E312A0D1180002570DE /* CircularProgressView.swift */; };
+		A6403E342A0D1202002570DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E332A0D1202002570DE /* TestView.swift */; };
+		A6403E362A0D214F002570DE /* StepSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E352A0D214F002570DE /* StepSettingView.swift */; };
+		A6EBDBA92A1BC0AD004F3501 /* CreatureAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A616957D2A0929CE001B0396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A616956F2A0929CE001B0396 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A616957A2A0929CE001B0396;
+			remoteInfo = "PetWalker Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A616958E2A0929D0001B0396 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A616957C2A0929CE001B0396 /* PetWalker Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A61695B62A0946DC001B0396 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A61695752A0929CE001B0396 /* PetWalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetWalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A616957B2A0929CE001B0396 /* PetWalker Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetWalker Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61695802A0929CE001B0396 /* PetWalkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWalkerApp.swift; sourceTree = "<group>"; };
+		A61695822A0929CE001B0396 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A61695842A0929D0001B0396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A61695872A0929D0001B0396 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A61695922A092C10001B0396 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		A61695942A09324B001B0396 /* PetWalker-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PetWalker-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A61695962A09325A001B0396 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		A616959B2A093382001B0396 /* PetWalker Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PetWalker Watch App.entitlements"; sourceTree = "<group>"; };
+		A61695A32A0946DB001B0396 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A61695A52A0946DB001B0396 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A61695A82A0946DB001B0396 /* PetWalkerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWalkerWidget.swift; sourceTree = "<group>"; };
+		A61695AA2A0946DB001B0396 /* PetWalkerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PetWalkerWidget.intentdefinition; sourceTree = "<group>"; };
+		A61695AB2A0946DC001B0396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A61695AD2A0946DC001B0396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A61695C42A09497C001B0396 /* PetWalkerWidgetExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PetWalkerWidgetExtension copy-Info.plist"; path = "/Users/nickmelekian/Documents/PetWalker/PetWalkerWidgetExtension copy-Info.plist"; sourceTree = "<absolute>"; };
+		A6403E312A0D1180002570DE /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		A6403E332A0D1202002570DE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		A6403E352A0D214F002570DE /* StepSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSettingView.swift; sourceTree = "<group>"; };
+		A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureAnimationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A61695782A0929CE001B0396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A616956E2A0929CE001B0396 = {
+			isa = PBXGroup;
+			children = (
+				A616957F2A0929CE001B0396 /* PetWalker Watch App */,
+				A61695A72A0946DB001B0396 /* PetWalkerWidget */,
+				A61695762A0929CE001B0396 /* Products */,
+				A61695952A09325A001B0396 /* Frameworks */,
+				A61695C42A09497C001B0396 /* PetWalkerWidgetExtension copy-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		A61695762A0929CE001B0396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A61695752A0929CE001B0396 /* PetWalker.app */,
+				A616957B2A0929CE001B0396 /* PetWalker Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A616957F2A0929CE001B0396 /* PetWalker Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				A616959B2A093382001B0396 /* PetWalker Watch App.entitlements */,
+				A61695942A09324B001B0396 /* PetWalker-Watch-App-Info.plist */,
+				A61695802A0929CE001B0396 /* PetWalkerApp.swift */,
+				A61695822A0929CE001B0396 /* ContentView.swift */,
+				A6403E352A0D214F002570DE /* StepSettingView.swift */,
+				A6403E332A0D1202002570DE /* TestView.swift */,
+				A6403E312A0D1180002570DE /* CircularProgressView.swift */,
+				A61695922A092C10001B0396 /* HealthKitManager.swift */,
+				A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */,
+				A61695842A0929D0001B0396 /* Assets.xcassets */,
+				A61695862A0929D0001B0396 /* Preview Content */,
+			);
+			path = "PetWalker Watch App";
+			sourceTree = "<group>";
+		};
+		A61695862A0929D0001B0396 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A61695872A0929D0001B0396 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A61695952A09325A001B0396 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A61695962A09325A001B0396 /* HealthKit.framework */,
+				A61695A32A0946DB001B0396 /* WidgetKit.framework */,
+				A61695A52A0946DB001B0396 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A61695A72A0946DB001B0396 /* PetWalkerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A61695A82A0946DB001B0396 /* PetWalkerWidget.swift */,
+				A61695AA2A0946DB001B0396 /* PetWalkerWidget.intentdefinition */,
+				A61695AB2A0946DC001B0396 /* Assets.xcassets */,
+				A61695AD2A0946DC001B0396 /* Info.plist */,
+			);
+			path = PetWalkerWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A61695742A0929CE001B0396 /* PetWalker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A616958F2A0929D0001B0396 /* Build configuration list for PBXNativeTarget "PetWalker" */;
+			buildPhases = (
+				A61695732A0929CE001B0396 /* Resources */,
+				A616958E2A0929D0001B0396 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A616957E2A0929CE001B0396 /* PBXTargetDependency */,
+			);
+			name = PetWalker;
+			productName = PetWalker;
+			productReference = A61695752A0929CE001B0396 /* PetWalker.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		A616957A2A0929CE001B0396 /* PetWalker Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A616958B2A0929D0001B0396 /* Build configuration list for PBXNativeTarget "PetWalker Watch App" */;
+			buildPhases = (
+				A61695772A0929CE001B0396 /* Sources */,
+				A61695782A0929CE001B0396 /* Frameworks */,
+				A61695792A0929CE001B0396 /* Resources */,
+				A61695B62A0946DC001B0396 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PetWalker Watch App";
+			productName = "PetWalker Watch App";
+			productReference = A616957B2A0929CE001B0396 /* PetWalker Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A616956F2A0929CE001B0396 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A61695742A0929CE001B0396 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					A616957A2A0929CE001B0396 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = A61695722A0929CE001B0396 /* Build configuration list for PBXProject "PetWalker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A616956E2A0929CE001B0396;
+			productRefGroup = A61695762A0929CE001B0396 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A61695742A0929CE001B0396 /* PetWalker */,
+				A616957A2A0929CE001B0396 /* PetWalker Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A61695732A0929CE001B0396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A61695792A0929CE001B0396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61695882A0929D0001B0396 /* Preview Assets.xcassets in Resources */,
+				A61695852A0929D0001B0396 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A61695772A0929CE001B0396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6403E342A0D1202002570DE /* TestView.swift in Sources */,
+				A61695832A0929CE001B0396 /* ContentView.swift in Sources */,
+				A61695812A0929CE001B0396 /* PetWalkerApp.swift in Sources */,
+				A61695AF2A0946DC001B0396 /* PetWalkerWidget.intentdefinition in Sources */,
+				A6EBDBA92A1BC0AD004F3501 /* CreatureAnimationView.swift in Sources */,
+				A61695932A092C10001B0396 /* HealthKitManager.swift in Sources */,
+				A6403E362A0D214F002570DE /* StepSettingView.swift in Sources */,
+				A6403E322A0D1180002570DE /* CircularProgressView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A616957E2A0929CE001B0396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A616957A2A0929CE001B0396 /* PetWalker Watch App */;
+			targetProxy = A616957D2A0929CE001B0396 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A61695892A0929D0001B0396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		A616958A2A0929D0001B0396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		A616958C2A0929D0001B0396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PetWalker Watch App/PetWalker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PetWalker Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PetWalker-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WanderPets;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "PetWalker displays health information during your daily activity.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "PetWalker stores completed information in the Health App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		A616958D2A0929D0001B0396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PetWalker Watch App/PetWalker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PetWalker Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PetWalker-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WanderPets;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "PetWalker displays health information during your daily activity.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "PetWalker stores completed information in the Health App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		A61695902A0929D0001B0396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				INFOPLIST_KEY_CFBundleDisplayName = PetWalker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A61695912A0929D0001B0396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				INFOPLIST_KEY_CFBundleDisplayName = PetWalker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A61695722A0929CE001B0396 /* Build configuration list for PBXProject "PetWalker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A61695892A0929D0001B0396 /* Debug */,
+				A616958A2A0929D0001B0396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A616958B2A0929D0001B0396 /* Build configuration list for PBXNativeTarget "PetWalker Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A616958C2A0929D0001B0396 /* Debug */,
+				A616958D2A0929D0001B0396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A616958F2A0929D0001B0396 /* Build configuration list for PBXNativeTarget "PetWalker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A61695902A0929D0001B0396 /* Debug */,
+				A61695912A0929D0001B0396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A616956F2A0929CE001B0396 /* Project object */;
+}
