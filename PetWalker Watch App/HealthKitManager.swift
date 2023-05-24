@@ -24,6 +24,7 @@ class HealthKitViewModel: ObservableObject {
     @AppStorage("total_distance") var totalDistance: Double = 0.0
     @AppStorage("step_goal") var userStepGoal = 0
     @AppStorage("is_authorized") var isAuthorized = false
+    
 
     
     func healthRequest() {
@@ -34,6 +35,7 @@ class HealthKitViewModel: ObservableObject {
             self.readStepsTakenToday()
             self.readDistanceToday()
             self.readWheelchairDistanceToday()
+            self.testCollectionQuery()
             
         }
     }
@@ -69,6 +71,19 @@ class HealthKitViewModel: ObservableObject {
             }
         }
     }
+    
+    func testCollectionQuery() {
+        healthKitManager.testCollectionQuery(healthStore: healthStore) {distance, error in
+            if distance != 0.0 {
+                DispatchQueue.main.async {
+                    self.totalDistance = distance?.rounded() ?? 0
+//                    self.userDistance = Double(distance ?? 0)
+                }
+            }
+        }
+    }
+    
+    
     
     
     
@@ -125,6 +140,12 @@ class HealthKitViewModel: ObservableObject {
     }
     
 }
+
+
+
+
+
+
 
 class HealthKitManager {
     func setUpHealthRequest(healthStore: HKHealthStore, readSteps: @escaping () -> Void) {
@@ -215,5 +236,86 @@ class HealthKitManager {
         healthStore.execute(query)
        
     }
+    
+    
+    func testCollectionQuery(healthStore: HKHealthStore, completion: @escaping (Double?, Error?) -> Void) {
+        let calendar = Calendar.current
+        
+        // create 1 week interval
+        let interval = DateComponents(day: 7)
+        var components = DateComponents(calendar: calendar,
+                                        timeZone: calendar.timeZone,
+                                        hour: 3,
+                                        minute: 0,
+                                        second: 0,
+                                        weekday: 2)
+        
+        // set anchor for 3am on Monday
+        guard let anchorDate = calendar.nextDate(after: Date(),
+                                                 matching: components,
+                                                 matchingPolicy: .nextTime,
+                                                 repeatedTimePolicy: .first,
+                                                 direction: .backward) else {
+            fatalError("*** unable to find the previous Monday. ***")
+        }
+        
+        guard let quantityType = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning) else {
+            fatalError("Unable to create a distance count type")
+        }
+        
+        
+        // create the query
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType,
+                                                quantitySamplePredicate: nil,
+                                                options: .cumulativeSum,
+                                                anchorDate: anchorDate,
+                                                intervalComponents: interval)
+        
+        // set the results handler
+        query.initialResultsHandler = {
+            query, results, error in
+            
+            
+        
+        // Handle errors
+            if let error = error as? HKError {
+                switch (error.code) {
+                case .errorDatabaseInaccessible:
+                    return
+                    
+                default:
+                    return
+                }
+            }
+            
+            guard let statsCollection = results else {
+                // You should only hit this case if you have an unhandled error. Check for bugs in your code that creates the query or explicitly handle the error.
+                assertionFailure("")
+                return
+            }
+            
+            
+            let endDate = Date()
+            let threeMonthsAgo = DateComponents(month: -3)
+            
+            var vm = HealthKitViewModel()
+            
+            guard let startDate = calendar.date(byAdding: threeMonthsAgo, to: endDate) else {
+                fatalError("Unable to calculate start date")
+            }
+            
+            statsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
+                if let quantity = statistics.sumQuantity() {
+                    let value = quantity.doubleValue(for: .mile())
+                    
+                    vm.totalDistance = value
+                }
+            }
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    
     
 }

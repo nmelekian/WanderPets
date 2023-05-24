@@ -65,7 +65,7 @@ struct ContentView: View {
                         HStack{
                             VStack{
                                 Text("\(vm.userStepCount) steps")
-                                Text("\(vm.userDistance) miles")
+                                Text("\(String(format: "%.2f", vm.totalDistance)) miles")
                             }
                             CircularProgressView(toggleSheet: $toggleSheet, progress: (Double(vm.userStepCount) ?? 0.0)/Double(vm.userStepGoal), progress2: (Double(vm.userDistance) ?? 0)/10)
 
@@ -125,7 +125,7 @@ struct ContentView: View {
         .onAppear {
             vm.readStepsTakenToday()
             vm.readDistanceToday()
-            vm.totalDistance += Double(vm.userDistance) ?? 0.0
+            vm.testCollectionQuery()
             
             setPlayReminder()
         }
