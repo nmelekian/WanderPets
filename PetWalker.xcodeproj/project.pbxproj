@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8422CBF42A1E4D7800335A06 /* CreatureAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */; };
+		8422CBF62A1E4F2600335A06 /* Test_Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */; };
 		A616957C2A0929CE001B0396 /* PetWalker Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A616957B2A0929CE001B0396 /* PetWalker Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A61695812A0929CE001B0396 /* PetWalkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61695802A0929CE001B0396 /* PetWalkerApp.swift */; };
 		A61695832A0929CE001B0396 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61695822A0929CE001B0396 /* ContentView.swift */; };
@@ -17,7 +19,6 @@
 		A6403E322A0D1180002570DE /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E312A0D1180002570DE /* CircularProgressView.swift */; };
 		A6403E342A0D1202002570DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E332A0D1202002570DE /* TestView.swift */; };
 		A6403E362A0D214F002570DE /* StepSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6403E352A0D214F002570DE /* StepSettingView.swift */; };
-		A6EBDBA92A1BC0AD004F3501 /* CreatureAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureAnimationView.swift; sourceTree = "<group>"; };
+		8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_Haptic.swift; sourceTree = "<group>"; };
 		A61695752A0929CE001B0396 /* PetWalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetWalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A616957B2A0929CE001B0396 /* PetWalker Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PetWalker Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61695802A0929CE001B0396 /* PetWalkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWalkerApp.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		A6403E312A0D1180002570DE /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		A6403E332A0D1202002570DE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		A6403E352A0D214F002570DE /* StepSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSettingView.swift; sourceTree = "<group>"; };
-		A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +122,10 @@
 				A6403E332A0D1202002570DE /* TestView.swift */,
 				A6403E312A0D1180002570DE /* CircularProgressView.swift */,
 				A61695922A092C10001B0396 /* HealthKitManager.swift */,
-				A6EBDBA82A1BC0AD004F3501 /* CreatureAnimationView.swift */,
 				A61695842A0929D0001B0396 /* Assets.xcassets */,
 				A61695862A0929D0001B0396 /* Preview Content */,
+				8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */,
+				8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */,
 			);
 			path = "PetWalker Watch App";
 			sourceTree = "<group>";
@@ -259,9 +262,10 @@
 				A61695832A0929CE001B0396 /* ContentView.swift in Sources */,
 				A61695812A0929CE001B0396 /* PetWalkerApp.swift in Sources */,
 				A61695AF2A0946DC001B0396 /* PetWalkerWidget.intentdefinition in Sources */,
-				A6EBDBA92A1BC0AD004F3501 /* CreatureAnimationView.swift in Sources */,
+				8422CBF42A1E4D7800335A06 /* CreatureAnimationView.swift in Sources */,
 				A61695932A092C10001B0396 /* HealthKitManager.swift in Sources */,
 				A6403E362A0D214F002570DE /* StepSettingView.swift in Sources */,
+				8422CBF62A1E4F2600335A06 /* Test_Haptic.swift in Sources */,
 				A6403E322A0D1180002570DE /* CircularProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
