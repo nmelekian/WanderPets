@@ -104,6 +104,7 @@ struct ContentView: View {
 
                     Button {
                         vm.healthRequest()
+                        setPlayReminder()
                         vm.isAuthorized.toggle()
 
 
@@ -127,7 +128,7 @@ struct ContentView: View {
             vm.readDistanceToday()
             vm.testCollectionQuery()
             
-            setPlayReminder()
+            
         }
     }
     

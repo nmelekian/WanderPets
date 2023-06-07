@@ -2,56 +2,95 @@
 //  PetWalkerWidget.swift
 //  PetWalkerWidget
 //
-//  Created by Nicholas Melekian on 5/8/23.
+//  Created by Nicholas Melekian on 6/6/23.
 //
 
 import WidgetKit
 import SwiftUI
-import Intents
 
-struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+struct Provider: TimelineProvider {
+    func placeholder(in context: Context) -> WanderEntry {
+        WanderEntry(date: Date())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(in context: Context, completion: @escaping (WanderEntry) -> ()) {
+        let entry = WanderEntry(date: Date())
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        var entries: [WanderEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = WanderEntry(date: entryDate)
             entries.append(entry)
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
-
-    func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
-        return [
-            IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
-        ]
-    }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct WanderEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+//    let data:
 }
 
 struct PetWalkerWidgetEntryView : View {
-    var entry: Provider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
+        var entry: Provider.Entry
 
+        var body: some View {
+            switch widgetFamily {
+                case .accessoryCorner:
+                    ComplicationCorner()
+                case .accessoryCircular:
+                    ComplicationCircular()
+                case .accessoryInline:
+                    ComplicationInline()
+                case .accessoryRectangular:
+                    ComplicationRectangular()
+                @unknown default:
+                    //mandatory as there are more widget families as in lockscreen widgets etc
+                    Text("Not an implemented widget yet")
+            }
+        }
+}
+
+struct ComplicationInline : View {
     var body: some View {
-        Text(entry.date, style: .time)
+        Text("This will be a quote")
+            .widgetAccentable(true)
+            .unredacted()
+        }
+}
+struct ComplicationCircular : View {
+    var body: some View {
+         Text("This will be a quote")
+             .widgetAccentable(true)
+             .unredacted()
     }
+}
+struct ComplicationCorner : View {
+    var body: some View {
+        Image(systemName: "quote.bubble")
+            .widgetLabel {
+                Text("This will be a quote")
+                    .widgetAccentable(true)
+            }
+        
+             .unredacted()
+    }
+}
+struct ComplicationRectangular : View {
+    var body: some View {
+        Text("This will be a quote")
+            .widgetAccentable(true)
+            .unredacted()
+        }
 }
 
 @main
@@ -59,17 +98,27 @@ struct PetWalkerWidget: Widget {
     let kind: String = "PetWalkerWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             PetWalkerWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Step Progression")
+        .description("This is a complication that shows your your step and distance progress every day.")
     }
 }
 
 struct PetWalkerWidget_Previews: PreviewProvider {
     static var previews: some View {
-        PetWalkerWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        PetWalkerWidgetEntryView(entry: WanderEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+        
+        PetWalkerWidgetEntryView(entry: WanderEntry(date: Date()))
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+        
+        PetWalkerWidgetEntryView(entry: WanderEntry(date: Date()))
+            .previewContext(WidgetPreviewContext(family: .accessoryInline))
+        
+        PetWalkerWidgetEntryView(entry: WanderEntry(date: Date()))
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+        
     }
 }
