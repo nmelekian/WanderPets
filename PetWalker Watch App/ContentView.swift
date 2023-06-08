@@ -20,7 +20,7 @@ struct ContentView: View {
         
         NavigationStack {
             ZStack {
-                Image("background")
+                Image("background 1")
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea(edges: .all)
@@ -66,51 +66,15 @@ struct ContentView: View {
                                 
                                 HStack {
                                     Spacer()
-                                    
-                                    
-                                    //                            VStack{
-                                    //                                Text("Today's Step Count")
-                                    //                                    .font(.title3)
-                                    //                                HStack{
-                                    //                                    VStack{
-                                    //                                        Text("\(vm.userStepCount) steps")
-                                    //                                        Text("\(String(format: "%.2f", vm.totalDistance)) miles")
-                                    //                                    }
+                                                                
                                     CircularProgressView(toggleSheet: $toggleSheet, progress: (Double(vm.userStepCount) ?? 0.0)/Double(vm.userStepGoal), progress2: (Double(vm.userDistance) ?? 0)/10)
                                     
                                 }
-                                //   }
                                 
-                                
-                                
-                                //                    HStack{
-                                //
-                                //
-                                //
-                                //                        Image(petToggle == true ? "happy": "chillin" )
-                                //                            .onTapGesture {
-                                //                                petToggle.toggle()
-                                //                            }
-                                //
-                                //                    }
-                                //                    VStack{
-                                //                        Text("Today's Step Count")
-                                //                            .font(.title3)
-                                //                        HStack{
-                                //                            VStack{
-                                //                                Text("\(vm.userStepCount) steps")
-                                //                                Text("\(vm.userDistance) miles")
-                                //                            }
-                                //                            CircularProgressView(toggleSheet: $toggleSheet, progress: (Double(vm.userStepCount) ?? 0.0)/Double(vm.userStepGoal), progress2: (Double(vm.userDistance) ?? 0)/10)
-                                //
-                                //                        }
-                                //                    }
                             }
                         }
                     } else {
                         VStack {
-                            Text("Please authorize Healthkit!")
-                                .font(.title3)
                             
                             Button {
                                 vm.healthRequest()
@@ -122,9 +86,9 @@ struct ContentView: View {
                                     .font(.body)
                                     .foregroundColor(.white)
                             }
-                            .frame(width: 200, height: 55)
+                           // .frame(width: 200, height: 55)
                             .background(Color(.orange))
-                            .cornerRadius(10)
+                            .cornerRadius(25)
                         }
                     }
                 }
@@ -139,8 +103,9 @@ struct ContentView: View {
                     
                     setPlayReminder()
                 }
-                    
-            }
+            }.navigationTitle(Text("\(vm.userStepCount) steps"))
+                .navigationBarTitleDisplayMode(.inline)
+
            
         }
         
