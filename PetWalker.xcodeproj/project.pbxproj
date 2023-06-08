@@ -137,6 +137,7 @@
 		A616957F2A0929CE001B0396 /* PetWalker Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */,
 				A616959B2A093382001B0396 /* PetWalker Watch App.entitlements */,
 				A61695942A09324B001B0396 /* PetWalker-Watch-App-Info.plist */,
 				A61695802A0929CE001B0396 /* PetWalkerApp.swift */,
@@ -147,7 +148,6 @@
 				A61695922A092C10001B0396 /* HealthKitManager.swift */,
 				A61695842A0929D0001B0396 /* Assets.xcassets */,
 				A61695862A0929D0001B0396 /* Preview Content */,
-				8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */,
 				8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */,
 			);
 			path = "PetWalker Watch App";

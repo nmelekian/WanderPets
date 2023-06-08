@@ -23,7 +23,7 @@ struct StepSettingView: View {
                 
                 dismiss()
             } label: {
-                Text("set goal")
+                Text("Set Goal")
             }
         }
     }
