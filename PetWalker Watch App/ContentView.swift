@@ -10,11 +10,12 @@ import HealthKit
 import UserNotifications
 
 struct ContentView: View {
+
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var vm: HealthKitViewModel
     @State private var toggleSheet = false
     @State private var petToggle = false
     @State private var isTapped = false
-    
     
     var body: some View {
         
@@ -105,6 +106,7 @@ struct ContentView: View {
                     Button {
                         vm.healthRequest()
                         vm.isAuthorized.toggle()
+                        vm.setAuthorizeNotifications()
 
 
                     } label: {
@@ -126,57 +128,20 @@ struct ContentView: View {
             vm.readStepsTakenToday()
             vm.readDistanceToday()
             vm.testCollectionQuery()
-            
-            setPlayReminder()
         }
-    }
-    
-    // Creates notification content and schedules the notification
-    func createNotification() {
-        let center = UNUserNotificationCenter.current()
         
-        let content = UNMutableNotificationContent()
-        content.title = "Blobby misses you!"
-        // note: this can add a custom sound
-        content.body = "Help Blobby get his steps in."
-        content.sound = .default
-        content.categoryIdentifier = "play_reminder"
-        
-        // this is a test trigger using a short time interval:
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 61, repeats: true)
-        
-        
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-    }
-    
-    func setPlayReminder() {
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .sound]) { success, error in
-            if success {
-                center.removeAllPendingNotificationRequests()
-                registerCategories()
-                createNotification()
+        .onChange(of: scenePhase) { newPhase in
+            switch newPhase {
+            case .background:
+                vm.startObservingStepCount()
+
+            case .inactive, .active:
+                return
+            @unknown default:
+                return
             }
         }
     }
-    
-    func registerCategories() {
-        let center = UNUserNotificationCenter.current()
-        
-        let play = UNNotificationAction(identifier: "Play", title: "Play Now", options: .foreground)
-        let category = UNNotificationCategory(identifier: "play_reminder", actions: [play], intentIdentifiers: [])
-        
-        center.setNotificationCategories([category])
-    }
-    
-    
-    
-    
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

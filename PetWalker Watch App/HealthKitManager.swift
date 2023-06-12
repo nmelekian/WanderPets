@@ -8,11 +8,12 @@
 import Foundation
 import HealthKit
 import SwiftUI
+import UserNotifications
 
 
 
 class HealthKitViewModel: ObservableObject {
-     var healthStore = HKHealthStore()
+    var healthStore = HKHealthStore()
     private var healthKitManager = HealthKitManager()
     
     @Published var userStepCount = ""
@@ -25,7 +26,7 @@ class HealthKitViewModel: ObservableObject {
     @AppStorage("step_goal") var userStepGoal = 0
     @AppStorage("is_authorized") var isAuthorized = false
     
-
+    
     
     func healthRequest() {
         healthKitManager.setUpHealthRequest(healthStore: healthStore) {
@@ -55,7 +56,7 @@ class HealthKitViewModel: ObservableObject {
             if distance != 0.0 {
                 DispatchQueue.main.async {
                     self.userDistance = String(format: "%.2f", distance ?? 0)
-//                    self.userDistance = Double(distance ?? 0)
+                    //                    self.userDistance = Double(distance ?? 0)
                 }
             }
         }
@@ -66,7 +67,7 @@ class HealthKitViewModel: ObservableObject {
             if distance != 0.0 {
                 DispatchQueue.main.async {
                     self.userDistance = String(format: "%.2f", distance ?? 0)
-//                    self.userDistance = Double(distance ?? 0)
+                    //                    self.userDistance = Double(distance ?? 0)
                 }
             }
         }
@@ -77,11 +78,12 @@ class HealthKitViewModel: ObservableObject {
             if distance != 0.0 {
                 DispatchQueue.main.async {
                     self.totalDistance = distance?.rounded() ?? 0
-//                    self.userDistance = Double(distance ?? 0)
+                    //                    self.userDistance = Double(distance ?? 0)
                 }
             }
         }
     }
+
     
     
     
@@ -138,8 +140,161 @@ class HealthKitViewModel: ObservableObject {
             isAuthorizedDistance = false
         }
     }
-    
+
+
+    //kj added - begin
+
+    // NOT part of MVP
+    func startObservingStepCount() {
+        guard let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount) else {
+            // This should never fail when using a defined constant.
+            fatalError("*** Unable to get the step count type ***")
+        }
+
+        let query = HKObserverQuery(sampleType: stepCountType, predicate: nil) { (query, completionHandler, errorOrNil) in
+
+            if let error = errorOrNil {
+                // Properly handle the error.
+                return
+            }
+
+
+            // Take whatever steps are necessary to update your app.
+            // This often involves executing other queries to access the new data.
+
+            // If you have subscribed for background updates you must call the completion handler here.
+            // completionHandler()
+
+            //self.morningNotification()
+            self.readStepsTakenToday()
+
+
+            //var updateHandler: ((HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void)? { get set }
+
+
+            self.compareToStepGoal()
+
+            self.healthStore.execute(query)
+
+        }
+
+
+    }
+
+    // NOT part of MVP
+    func compareToStepGoal() {
+        if (Int(userStepCount) ?? 0) >= (Int(exactly: userStepGoal) ?? 0 ){
+            // achieved step goal
+            // activate trigger
+
+            let center = UNUserNotificationCenter.current()
+
+            let content = UNMutableNotificationContent()
+            content.title = "Great Job!"
+            content.body = "You have reached today's step goal!."
+            // note: can add a custom sound
+            content.sound = .default
+            content.categoryIdentifier = "step_goal_reached"
+
+
+            // this trigger does...
+
+
+            
+
+
+
+
+
+        }
+    }
+
+
+
+
+    // Creates Good Morning notification content and schedules the notification
+    func createMorningNotification() {
+        let center = UNUserNotificationCenter.current()
+
+        let content = UNMutableNotificationContent()
+        content.title = "Good Morning!"
+        content.body = "Steppy wants to say good morning!."
+        // note: can add a custom sound
+        content.sound = .default
+        content.categoryIdentifier = "play_reminder"
+
+
+        //this is a test trigger using a short time interval:
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 61, repeats: true)
+
+        // this trigger shows the alert every morning at 10:30AM:
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 01
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
+
+
+    // Creates Good Evening notification content and schedules the notification
+    func createEveningNotification() {
+        let center = UNUserNotificationCenter.current()
+
+        let content = UNMutableNotificationContent()
+        content.title = "Good Evening!"
+        content.body = "Steppy wants to say good night!."
+        // note: can add a custom sound
+        content.sound = .default
+        content.categoryIdentifier = "play_reminder"
+
+
+        // this is a test trigger using a short time interval:
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 61, repeats: true)
+
+        // this trigger shows the alert every morning at 10:30AM:
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 02
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
+
+    // xxxxAttempts to request permission for notifications
+    func setAuthorizeNotifications() {
+        let center = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.alert, .sound]) { success, error in
+            if success {
+                center.removeAllPendingNotificationRequests()
+                self.registerCategories()
+                //self.startObservingStepCount()
+                self.createMorningNotification()
+                self.createEveningNotification()
+
+
+            }
+        }
+    }
+
+    func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+
+        let play = UNNotificationAction(identifier: "visit", title: "Visit Steppy", options: .foreground)
+        let category = UNNotificationCategory(identifier: "play_reminder", actions: [play], intentIdentifiers: [])
+
+        center.setNotificationCategories([category])
+    }
+
+
+
+    // kj added - end
+
 }
+
 
 
 
@@ -319,3 +474,6 @@ class HealthKitManager {
     
     
 }
+
+
+

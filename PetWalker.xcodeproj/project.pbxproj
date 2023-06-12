@@ -406,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PetWalker Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				DEVELOPMENT_TEAM = F98RRD6A58;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PetWalker-Watch-App-Info.plist";
@@ -420,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.WanderPets.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -441,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PetWalker Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				DEVELOPMENT_TEAM = F98RRD6A58;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PetWalker-Watch-App-Info.plist";
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.WanderPets.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -473,7 +473,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				DEVELOPMENT_TEAM = F98RRD6A58;
 				INFOPLIST_KEY_CFBundleDisplayName = PetWalker;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets;
@@ -493,7 +493,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L8NA8XZ3DK;
+				DEVELOPMENT_TEAM = F98RRD6A58;
 				INFOPLIST_KEY_CFBundleDisplayName = PetWalker;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nick.WanderPets;
