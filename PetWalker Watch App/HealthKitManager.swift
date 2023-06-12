@@ -24,6 +24,7 @@ class HealthKitViewModel: ObservableObject {
     @AppStorage("total_distance") var totalDistance: Double = 0.0
     @AppStorage("step_goal") var userStepGoal = 0
     @AppStorage("is_authorized") var isAuthorized = false
+    @AppStorage("has_seen_intro") var hasSeenIntro = false 
     
 
     

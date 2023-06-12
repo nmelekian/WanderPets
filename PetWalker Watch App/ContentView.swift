@@ -18,16 +18,21 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationStack {
+        if vm.hasSeenIntro != true {
+            IntroStoryView()
+        }
+        
+        else { NavigationStack {
             ZStack {
-                Image("background 1")
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea(edges: .all)
-                
+                if vm.hasSeenIntro {
+                    Image("background 1")
+                        .resizable()
+                        .scaledToFill()
+                        .ignoresSafeArea(edges: .all)
+                }
                 VStack {
                     if vm.isAuthorized {
-                        Group{
+                        Group {
                             VStack{
                                 Spacer()
                                 if isTapped {
@@ -66,7 +71,7 @@ struct ContentView: View {
                                 
                                 HStack {
                                     Spacer()
-                                                                
+                                    
                                     CircularProgressView(toggleSheet: $toggleSheet, progress: (Double(vm.userStepCount) ?? 0.0)/Double(vm.userStepGoal), progress2: (Double(vm.userDistance) ?? 0)/10)
                                     
                                 }
@@ -74,22 +79,7 @@ struct ContentView: View {
                             }
                         }
                     } else {
-                        VStack {
-                            
-                            Button {
-                                vm.healthRequest()
-                                vm.isAuthorized.toggle()
-                                
-                                
-                            } label: {
-                                Text("Authorize HealthKit")
-                                    .font(.body)
-                                    .foregroundColor(.white)
-                            }
-                           // .frame(width: 200, height: 55)
-                            .background(Color(.orange))
-                            .cornerRadius(25)
-                        }
+                        AuthorizationView()
                     }
                 }
                 .sheet(isPresented: $toggleSheet, content: {
@@ -105,10 +95,10 @@ struct ContentView: View {
                 }
             }.navigationTitle(Text("\(vm.userStepCount) steps"))
                 .navigationBarTitleDisplayMode(.inline)
-
-           
+            
         }
-        
+            
+        }
     }
     
     // Creates notification content and schedules the notification
