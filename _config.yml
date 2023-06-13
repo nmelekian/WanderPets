@@ -3,7 +3,7 @@
 # Name of website
 title: WanderPets
 author: Spring Chickens
-
+description: 
 avatar: "/assets/img/avatar-icon.png"
 
 theme: jekyll-theme-minimal
