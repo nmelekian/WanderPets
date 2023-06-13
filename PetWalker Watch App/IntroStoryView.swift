@@ -14,7 +14,7 @@ struct IntroStoryView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Image("longstory")
+                Image("longstory", label: Text("Steppy's green egg falls out of its cloud and tumbles through space until it lands on a planet and cracks"))
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea(edges: .all)

@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
                 VStack {
                     if vm.isAuthorized {
-                        Group {
+                    //    Group {
                             VStack{
                                 Spacer()
                                 if isTapped {
@@ -77,7 +77,7 @@ struct ContentView: View {
                                 }
                                 
                             }
-                        }
+                     //   }
                     } else {
                         AuthorizationView()
                     }

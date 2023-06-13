@@ -71,6 +71,9 @@ struct CircularProgressView: View {
             
             
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(String(format: "%.0f", 100*progress2)) percent of daily goal complete, \(String(format: "%.0f", 100*progress)) percent to Steppy's next evolution. Tap to change daily goal.")
+        
         .onTapGesture {
             toggleSheet.toggle()
         }
