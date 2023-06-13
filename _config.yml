@@ -1,9 +1,9 @@
 
 
 # Name of website
-title: [WanderPets]
-author: [Spring Chickens]
+title: WanderPets
+author: Spring Chickens
 description: beep boop bop
 avatar: "/assets/img/avatar-icon.png"
 
-theme: jekyll-theme-minimal
+theme: reverie
