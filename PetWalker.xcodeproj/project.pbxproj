@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68A7A9202A387F3200DCCDC1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7A91F2A387F3200DCCDC1 /* MenuView.swift */; };
+		68A7A9222A387F3C00DCCDC1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7A9212A387F3B00DCCDC1 /* ProfileView.swift */; };
+		68A7A9242A387F4F00DCCDC1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7A9232A387F4F00DCCDC1 /* SettingsView.swift */; };
+		68A7A9262A387F5700DCCDC1 /* SteppyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7A9252A387F5700DCCDC1 /* SteppyView.swift */; };
 		8422CBF42A1E4D7800335A06 /* CreatureAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */; };
 		8422CBF62A1E4F2600335A06 /* Test_Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */; };
 		A616957C2A0929CE001B0396 /* PetWalker Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A616957B2A0929CE001B0396 /* PetWalker Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,6 +73,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		68A7A91F2A387F3200DCCDC1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		68A7A9212A387F3B00DCCDC1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		68A7A9232A387F4F00DCCDC1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		68A7A9252A387F5700DCCDC1 /* SteppyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteppyView.swift; sourceTree = "<group>"; };
 		8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureAnimationView.swift; sourceTree = "<group>"; };
 		8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_Haptic.swift; sourceTree = "<group>"; };
 		A61695752A0929CE001B0396 /* PetWalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetWalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +122,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68A7A91D2A387ED600DCCDC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */,
+				8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */,
+				A61695822A0929CE001B0396 /* ContentView.swift */,
+				A6403E352A0D214F002570DE /* StepSettingView.swift */,
+				A6403E332A0D1202002570DE /* TestView.swift */,
+				A6403E312A0D1180002570DE /* CircularProgressView.swift */,
+				68A7A91F2A387F3200DCCDC1 /* MenuView.swift */,
+				68A7A9212A387F3B00DCCDC1 /* ProfileView.swift */,
+				68A7A9232A387F4F00DCCDC1 /* SettingsView.swift */,
+				68A7A9252A387F5700DCCDC1 /* SteppyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		68A7A91E2A387EDC00DCCDC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A61695922A092C10001B0396 /* HealthKitManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A616956E2A0929CE001B0396 = {
 			isa = PBXGroup;
 			children = (
@@ -137,18 +170,13 @@
 		A616957F2A0929CE001B0396 /* PetWalker Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				8422CBF32A1E4D7800335A06 /* CreatureAnimationView.swift */,
+				68A7A91E2A387EDC00DCCDC1 /* Models */,
+				68A7A91D2A387ED600DCCDC1 /* Views */,
 				A616959B2A093382001B0396 /* PetWalker Watch App.entitlements */,
 				A61695942A09324B001B0396 /* PetWalker-Watch-App-Info.plist */,
 				A61695802A0929CE001B0396 /* PetWalkerApp.swift */,
-				A61695822A0929CE001B0396 /* ContentView.swift */,
-				A6403E352A0D214F002570DE /* StepSettingView.swift */,
-				A6403E332A0D1202002570DE /* TestView.swift */,
-				A6403E312A0D1180002570DE /* CircularProgressView.swift */,
-				A61695922A092C10001B0396 /* HealthKitManager.swift */,
 				A61695842A0929D0001B0396 /* Assets.xcassets */,
 				A61695862A0929D0001B0396 /* Preview Content */,
-				8422CBF52A1E4F2600335A06 /* Test_Haptic.swift */,
 			);
 			path = "PetWalker Watch App";
 			sourceTree = "<group>";
@@ -313,12 +341,16 @@
 			files = (
 				A6403E342A0D1202002570DE /* TestView.swift in Sources */,
 				A61695832A0929CE001B0396 /* ContentView.swift in Sources */,
+				68A7A9222A387F3C00DCCDC1 /* ProfileView.swift in Sources */,
 				A61695812A0929CE001B0396 /* PetWalkerApp.swift in Sources */,
 				8422CBF42A1E4D7800335A06 /* CreatureAnimationView.swift in Sources */,
+				68A7A9202A387F3200DCCDC1 /* MenuView.swift in Sources */,
 				A61695932A092C10001B0396 /* HealthKitManager.swift in Sources */,
 				A6403E362A0D214F002570DE /* StepSettingView.swift in Sources */,
 				8422CBF62A1E4F2600335A06 /* Test_Haptic.swift in Sources */,
 				A6403E322A0D1180002570DE /* CircularProgressView.swift in Sources */,
+				68A7A9242A387F4F00DCCDC1 /* SettingsView.swift in Sources */,
+				68A7A9262A387F5700DCCDC1 /* SteppyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
